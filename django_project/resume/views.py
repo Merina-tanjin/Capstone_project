@@ -25,3 +25,4 @@ class CandidateView(View):
       candidate = Resume.objects.get(pk=pk)
     
       return render(request, 'resume/candidate.html', {'candidate':candidate})
+   

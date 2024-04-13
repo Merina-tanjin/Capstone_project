@@ -76,4 +76,4 @@ class Resume(models.Model):
  job_city = models.CharField(max_length=50)
  profile_image = models.ImageField(upload_to='resume/profileimg', blank=True)
  my_file = models.FileField(upload_to='resume/doc', blank=True)
- blog = models.CharField(max_length=50)
+ blog = models.CharField(max_length=100000)

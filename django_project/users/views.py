@@ -17,6 +17,7 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
+
 def logout(request):
     django_logout(request)
     messages.success(request, 'You have been logged out successfully.')

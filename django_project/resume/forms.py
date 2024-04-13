@@ -36,7 +36,7 @@ class ResumeForm(forms.ModelForm):
  class Meta:
   model = Resume
   fields = ['name', 'dob', 'gender', 'locality', 'city', 'pin', 'state', 'mobile', 'email', 'job_city', 'profile_image', 'my_file', 'blog']
-  labels = {'name':'Full Name', 'dob': 'Date of Birth', 'pin':'Pin Code', 'mobile':'Mobile No.', 'email':'Email ID', 'profile_image':'Profile Image', 'my_file':'Document', 'blog': 'My blog post'}
+  labels = {'name':'Full Name', 'dob': 'Date of Birth', 'locality': 'Street Address', 'pin':'Pin Code', 'mobile':'Mobile No.', 'email':'Email ID', 'profile_image':'Profile Image', 'my_file':'Document', 'blog': 'My blog post'}
   widgets = {
    'name':forms.TextInput(attrs={'class':'form-control'}),
    'dob':forms.DateInput(attrs={'class':'form-control', 'id':'datepicker'}),
