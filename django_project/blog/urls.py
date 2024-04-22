@@ -8,7 +8,7 @@ from .views import (
     UserPostListView
 )
 from . import views
-
+from blog import views
 
 
 urlpatterns = [
@@ -18,7 +18,13 @@ urlpatterns = [
     path('post/new/', PostCreateView.as_view(), name='post-create'),
     path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    path('blog/ ', views.HomeView.as_view(), name='resume_home'),
+    path('<int:pk>', views.CandidateView.as_view(), name='candidate'),
+
+
+
     path('about/', views.about, name='blog-about'),
+
  
   
 ]

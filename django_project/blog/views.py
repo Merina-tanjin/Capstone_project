@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.template import loader
 from django.views.generic import (
     ListView,
     DetailView,
@@ -9,7 +10,9 @@ from django.views.generic import (
     DeleteView
 )
 from .models import Post
-
+from .forms import ResumeForm
+from .models import Resume
+from django.views import View
 
 def home(request):
     context = {
@@ -34,6 +37,7 @@ class UserPostListView(ListView):
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
+
 
 class PostDetailView(DetailView):
     model = Post
@@ -76,3 +80,37 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
+
+
+
+class HomeView(View):
+   
+    def get(self, request):
+      form = ResumeForm()
+      candidates = Resume.objects.all()
+      return render(request, 'blog/resume_home.html', { 'candidates':candidates, 'form':form})
+
+    def post(self, request):
+      form = ResumeForm(request.POST, request.FILES)
+      
+      if form.is_valid():
+         form.save()
+
+      return redirect('resume_home')
+
+      return render(request, 'blog/resume_home.html', {'candidates': candidates, 'form': form})
+
+class CandidateView(View):
+   
+   def get(self, request, **kwargs):
+      pk = kwargs['pk']
+      candidates = Resume.objects.get(pk=pk)
+      user = User.objects.get(username=candidates.name)  
+      posts = Post.objects.filter(author=user).order_by('-date_posted')
+
+      post_contents = []
+      for post in posts:
+            post_contents.append(post.content)
+
+
+      return render(request, 'blog/candidate.html', {'candidate':candidates, 'posts': post_contents})
