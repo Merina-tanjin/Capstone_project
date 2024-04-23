@@ -108,9 +108,9 @@ class CandidateView(View):
       user = User.objects.get(username=candidates.name)  
       posts = Post.objects.filter(author=user).order_by('-date_posted')
 
-      post_contents = []
-      for post in posts:
-            post_contents.append(post.content)
-
+    #   post_contents = []
+    #   for post in posts:
+    #         post_contents.append(post.content)
+      post_contents = [post.content for post in posts]
 
       return render(request, 'blog/candidate.html', {'candidate':candidates, 'posts': post_contents})
