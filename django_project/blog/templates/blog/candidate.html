@@ -24,26 +24,32 @@
      <p>Email ID: {{candidate.email}}</p>
      <p>Preferred Job Cities: {{candidate.job_city|remove_special:"[]'"}}</p>
      <p>Attachment: <a href="{{candidate.my_file.url}}">Download File</a></p>
-     <p>Blog: {{candidate.blog_post}}
-
-        {% for post in posts %}
-    {{ post }}
-{% endfor %}
+     <p>Blog: {{candidate.blog_post}} <br>
 
 
 
-               <!-- {% block content %}
+
+
+
+
+        <!-- {% for post in posts %}
+                {{ post }}
+        {% endfor %} -->
+
+
+
+               {% block content %}
         <div class="container">
-            <h1>{{ candidate.name }}</h1>
-            <p>{{ candidate.description }}</p>
-            <h2>Posts</h2>
+            <!-- <h1>{{ candidate.name }}</h1>
+            <p>{{ candidate.description }}</p> -->
+            <h4>My blog post: </h4>
             <ul>
                 {% for post in posts %}
                     <li>{{ post }}</li>
                 {% endfor %}
             </ul>
         </div>
-    {% endblock %} -->
+    {% endblock %}
     
      </p>
     

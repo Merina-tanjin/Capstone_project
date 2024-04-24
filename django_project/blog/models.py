@@ -88,7 +88,6 @@ class Post(models.Model):
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    # resume = models.ForeignKey('Resume', on_delete=models.CASCADE, related_name='posts')
     resume = models.ForeignKey(Resume, on_delete=models.CASCADE, related_name='posts', null=True, blank=True)
 
 
