@@ -21,6 +21,7 @@ To install Blog2CV, follow these steps:
 5. Access the application through your web browser at http://localhost:8000.
 
 # Dependencies:
+- Python 3.11.4
 - Django==5.0.2
 - django-crispy-forms==2.1
 - gensim==4.3.2
