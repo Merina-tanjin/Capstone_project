@@ -8,17 +8,30 @@ Blog2CV is an innovative application that combines the power of blogging with re
 
 # Installation:
 To install Blog2CV, follow these steps:
-1. Clone the repository from GitHub.
-2. Navigate to the project directory.
-3. Install the required dependencies using pip:
+1. Download and install `python 3.11.4`. Add the python path to the System Env Variable and ensure the system finds it.
+   ```
+   https://www.python.org/downloads/release/python-3114
+   ```
+3. Clone the repository from GitHub.
+   ```
+   git clone https://github.com/Merina-tanjin/Capstone_project
+   ```
+4. Navigate to the project directory, create, and activate the environment
+   ```
+   cd Capstone_project
+   py -m venv env
+   .\env\Scripts\activate
+   ```
+7. Install the required dependencies using pip
    ```
    pip install -r requirements.txt
    ```
-4. Run the application using Django's built-in development server:
+8. Run the application using Django's built-in development server
    ```
+   cd django_project
    python manage.py runserver
    ```
-5. Access the application through your web browser at http://localhost:8000.
+9. Access the application at the local server http://localhost:8000
 
 # Dependencies:
 - Python 3.11.4
