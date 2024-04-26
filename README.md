@@ -32,7 +32,9 @@ To install Blog2CV, follow these steps:
    python manage.py runserver
    ```
 9. Access the application at the local server http://localhost:8000
-
+10. To test the site you can use the below information or create a new one.
+    Username: Merina
+    Password: Shithi-49
 # Dependencies:
 - Python 3.11.4
 - Django==5.0.2
