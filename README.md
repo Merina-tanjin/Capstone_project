@@ -8,7 +8,7 @@ Blog2CV is an innovative application that combines the power of blogging with re
 
 # Installation:
 To install Blog2CV, follow these steps:
-1. Download and install `python 3.11.4`. Add the python path to the System Env Variable and ensure the system finds it.
+1. Download and install `python 3.11.4`. Add the Python path to the System Env Variable and ensure the system finds it.
    ```
    https://www.python.org/downloads/release/python-3114
    ```
@@ -29,12 +29,14 @@ To install Blog2CV, follow these steps:
 8. Run the application using Django's built-in development server
    ```
    cd django_project
-   python manage.py runserver
+   python manage.py run server
    ```
 9. Access the application at the local server http://localhost:8000
-10. To test the site you can use the below information or create a new one.
-    Username: Merina
-    Password: Shithi-49
+10. To test the site you can use the below profile information or create a new one.
+    ```
+     Username: Merina
+     Password: Shithi-49
+      ```
 # Dependencies:
 - Python 3.11.4
 - Django==5.0.2
