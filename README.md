@@ -37,6 +37,8 @@ To install Blog2CV, follow these steps:
      Username: Merina
      Password: Shithi-49
       ```
+11. The username has to be similar to the resume username
+    
 # Dependencies:
 - Python 3.11.4
 - Django==5.0.2
