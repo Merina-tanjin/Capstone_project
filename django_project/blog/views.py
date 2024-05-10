@@ -106,7 +106,6 @@ class CandidateView(View):
       candidates = Resume.objects.get(pk=pk)
       user = User.objects.get(username=candidates.name)  
       posts = Post.objects.filter(author=user).order_by('-date_posted')
-
       post_contents = [post.content for post in posts]
       post_contents = post_contents[:5]
       summary = getSummary(post_contents)

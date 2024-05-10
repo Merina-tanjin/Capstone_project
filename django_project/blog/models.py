@@ -78,6 +78,8 @@ class Resume(models.Model):
  state = models.CharField(choices=STATE_CHOICE, max_length=50)
  mobile = models.PositiveIntegerField()
  email = models.EmailField()
+ education = models.TextField()
+ work = models.TextField() 
  job_city = models.CharField(max_length=50)
  profile_image = models.ImageField(upload_to='profileimg', blank=True)
  my_file = models.FileField(upload_to='doc', blank=True)

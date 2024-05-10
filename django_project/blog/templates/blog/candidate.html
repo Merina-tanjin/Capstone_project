@@ -10,10 +10,10 @@
 </head>
 <body>
   <div class="container">
-   <h1 class="alert-danger text-center p-3">Candidate Detail</h1>
+   <h1 class="alert-danger text-center p-3">Resume</h1>
    <div class="row">
     <div class="col-sm-10 shadow p-5 offset-sm-1">
-     <h3 class="text-center"><u>Resume</u></h3>
+     <h3 class="text-center"><u> </u></h3>
      <p class="float-end">Applicantion No: {{candidate.id}}</p>
      <img src="{{candidate.profile_image.url}}" alt="" class="img-fluid img-thumbnail float-end mt-4" width="150" height="150">
      <p>Name: {{candidate.name}}</p>
@@ -22,6 +22,8 @@
      <p>Address: {{candidate.locality}}, {{candidate.city}}, {{candidate.state}} - {{candidate.pin}}</p>
      <p>Mobile No: {{candidate.mobile}}</p>
      <p>Email ID: {{candidate.email}}</p>
+     <p>Educational Qualification: {{candidate.education}}</p>
+     <p>Work Experience: {{candidate.work}}</p>
      <p>Preferred Job Cities: {{candidate.job_city|remove_special:"[]'"}}</p>
      <p>Attachment: <a href="{{candidate.my_file.url}}">Download File</a></p>
      <p>Blog: {{candidate.blog_post}} <br>

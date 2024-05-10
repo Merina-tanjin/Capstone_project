@@ -35,8 +35,8 @@ class ResumeForm(forms.ModelForm):
  job_city = forms.MultipleChoiceField(label='Preferred Job Locations', choices=JOB_CITY_CHOICE, widget=forms.CheckboxSelectMultiple)
  class Meta:
   model = Resume
-  fields = ['name', 'dob', 'gender', 'locality', 'city', 'pin', 'state', 'mobile', 'email', 'job_city', 'profile_image', 'my_file', 'blog_post']
-  labels = {'name':'Full Name', 'dob': 'Date of Birth', 'locality': 'Street Address', 'pin':'Pin Code', 'mobile':'Mobile No.', 'email':'Email ID', 'profile_image':'Profile Image', 'my_file':'Document', 'blog_post': 'My blog post'}
+  fields = ['name', 'dob', 'gender', 'locality', 'city', 'pin', 'state', 'mobile', 'email','education','work', 'job_city', 'profile_image', 'my_file', 'blog_post']
+  labels = {'name':'Full Name', 'dob': 'Date of Birth', 'locality': 'Street Address', 'pin':'Pin Code', 'mobile':'Mobile No.', 'email':'Email ID','education':'Educational Qualification','work':'Work Experience', 'profile_image':'Profile Image', 'my_file':'Document', 'blog_post': 'My blog post'}
   widgets = {
    'name':forms.TextInput(attrs={'class':'form-control'}),
    'dob':forms.DateInput(attrs={'class':'form-control', 'id':'datepicker'}),
@@ -46,4 +46,9 @@ class ResumeForm(forms.ModelForm):
    'state':forms.Select(attrs={'class':'form-select'}),
    'mobile':forms.NumberInput(attrs={'class':'form-control'}),
    'email':forms.EmailInput(attrs={'class':'form-control'}),
+   'blog_post':forms.TextInput(attrs={'class':'form-control'}),
+   'education':forms.TextInput(attrs={'class':'form-control'}),
+   'work':forms.TextInput(attrs={'class':'form-control'}),
+
+      
   }
